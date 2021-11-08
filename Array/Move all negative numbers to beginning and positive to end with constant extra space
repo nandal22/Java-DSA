@@ -1,0 +1,34 @@
+/*
+        Input: -12, 11, -13, -5, 6, -7, 5, -3, -6
+        Output: -12 -13 -5 -7 -3 -6 11 6 5
+*/
+import java.util.*;
+public class Main
+{
+    public static void rearrange(int arr[],int size){
+        int j=0;
+        for(int i=0;i<size;i++){
+            if(arr[i]<0 && i!=j){
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+                j++;
+            }
+        }
+    }
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int size=sc.nextInt();
+		int[] arr=new int[size];
+		System.out.print("Input : ");
+		for(int i=0;i<size;i++){
+		    arr[i]=sc.nextInt();
+		}
+		rearrange(arr,size);
+		System.out.print("Output: ");
+		for(int i=0;i<size;i++){
+		    System.out.print(arr[i]+" ");
+		}
+		
+	}
+}
