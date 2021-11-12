@@ -1,0 +1,29 @@
+import java.util.*;
+public class Main
+{
+    public static boolean isRotation(String str1,String str2){
+        if(str1.length()==str2.length()){
+            String temp=str1+str1;
+            if(temp.contains(str2)){
+                return true;
+            }
+        }
+        return false;
+    }
+    
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter a string: ");
+		String str1=sc.next();
+		String str2=sc.next();
+		if(isRotation(str1,str2)){
+		    System.out.println("Strings are rotations of each other!");
+		    return;
+		}
+		else{
+		    System.out.println("Strings are not rotations of each other!");
+		}
+		
+		
+	}
+}
