@@ -1,0 +1,28 @@
+import java.util.*;
+/*
+      Input : Nandal
+      After replacing 'a' with 'x'
+      Output : Nxndxl
+*/
+public class Main
+{
+    public static String replace(String str,char c,char toReplace){
+        String res="";
+        for(int i=0;i<str.length();i++){
+            if(str.charAt(i)==c){
+                res+=toReplace;
+            }
+            else{
+                res+=str.charAt(i);
+            }
+            
+        }
+        return res;
+    }
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		String input=sc.next();
+		System.out.println("String after replacing a with x : "+replace(input,'a','x'));
+		
+	}
+}
