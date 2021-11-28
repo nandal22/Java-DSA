@@ -1,8 +1,15 @@
 import java.util.*;
 public class Main
 {
+    // One Way
+    public static int sum(int n){
+        if(n==0)       // Base Condition
+            return 0;
+        return n + sum(n-1);
+    }
+    // One Another Way
     public static void sum(int i,int n,int sum){
-        if(i>n){        // base Condition
+        if(i>n){        // Base Condition
             System.out.println("Sum of first "+n+" natural numbers is : "+sum);
             return;
         }
@@ -13,5 +20,6 @@ public class Main
 		Scanner sc=new Scanner(System.in);
 		int n =  sc.nextInt();
 		sum(1,n,0);      // passing i=1 ,n=0 & initially sum is 0;
+		System.out.println("Sum of first "+n+" natural numbers is : "+sum(n));  
 	}
 }
