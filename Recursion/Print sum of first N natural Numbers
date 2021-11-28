@@ -1,0 +1,17 @@
+import java.util.*;
+public class Main
+{
+    public static void sum(int i,int n,int sum){
+        if(i>n){        // base Condition
+            System.out.println("Sum of first "+n+" natural numbers is : "+sum);
+            return;
+        }
+        sum+=i;
+        sum(i+1,n,sum);//Recursive Call
+    }
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n =  sc.nextInt();
+		sum(1,n,0);      // passing i=1 ,n=0 & initially sum is 0;
+	}
+}
