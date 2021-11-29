@@ -18,7 +18,7 @@ public class Main
 		System.out.print("Enter the string : ");
 		String str=sc.next();
 		System.out.println("Subsequeces of the "+str+" are : ");
-		subSequences(str,0,"");
+		subSequences(str,0,"");         // Time Complexity => O(2^n)
 		
 	}
 }
