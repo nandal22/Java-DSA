@@ -1,0 +1,35 @@
+import java.util.*;
+
+public class Main
+{
+    public static void printFibonacci(int first,int second,int nth){
+        if(nth==0){
+            return;
+        }
+        int temp=first+second;
+        System.out.println(temp);
+        printFibonacci(second,temp,nth-1);
+    }
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    System.out.print("Enter the nth term till you want to print Fibonacci : ");
+	    int n=sc.nextInt();
+	    if(n<1){
+	        return;
+	    }
+	    else if(n==1){
+	        System.out.println("0");
+	        return;
+	    }
+	    else if(n==2){
+	        System.out.println("0");
+		    System.out.println("1");
+		    return;
+	    }
+		else{
+		    System.out.println("0");
+		    System.out.println("1");
+		    printFibonacci(0,1,n-2); // Passing firstTerm =0 , secondTerm =1 & nth term =n-2(Because we already printed first two terms)
+		}
+	}
+}
