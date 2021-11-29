@@ -1,0 +1,22 @@
+import java.util.*;
+
+public class Main
+{
+    public static void printReverseString(String str,int idx){
+        if(idx<0){
+            return;
+        }
+        System.out.print(str.charAt(idx));
+        printReverseString(str,idx-1);
+        
+    }
+    
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    System.out.print("Enter the string you want to reverse : ");
+	    String str=sc.nextLine();
+	    System.out.print("Reversed string is : ");
+	    printReverseString(str,str.length()-1);
+	    
+	}
+}
