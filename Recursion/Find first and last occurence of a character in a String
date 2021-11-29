@@ -1,0 +1,33 @@
+import java.util.*;
+
+public class Main
+{
+    public static int first = -1;
+    public static int last= -1;
+    public static void findOccurence(String str,int idx,char element){
+        if(idx==str.length()){
+            return;
+        }
+        char curr = str.charAt(idx);
+        if(curr == element){
+            if(first==-1){
+                first=idx;
+            }else{
+                last=idx;
+            }
+        }
+        findOccurence(str,idx+1,element);
+    }
+    
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    System.out.print("Enter the string : ");
+	    String str=sc.nextLine();
+	    System.out.print("Enter the character : ");
+	    char element = sc.next().charAt(0);
+	    findOccurence(str,0,element);
+	    System.out.println("First Occurence of "+element+" in "+str+" is : "+first);
+	    System.out.println("Last Occurence of "+element+" in "+str+" is : "+last);
+
+	}
+}
