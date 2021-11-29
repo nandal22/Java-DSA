@@ -1,0 +1,31 @@
+import java.util.*;
+
+public class Main
+{
+    public static int count=0;
+    public static void moveXToEnd(String str,int idx,String resString){
+        if(idx==str.length()){
+            for(int i=0;i<count;i++){
+                resString += "x";
+            }
+            System.out.println(resString);
+            return;
+        }
+        if(str.charAt(idx)=='x'){
+            count++;
+            moveXToEnd(str,idx+1,resString);
+        }
+        else{
+            resString += str.charAt(idx);
+            moveXToEnd(str,idx+1,resString);
+        }
+    }
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    System.out.print("Enter the string: ");
+	    String str=sc.nextLine();
+	    System.out.print("Resultant string is : ");
+	    moveXToEnd(str,0,"");
+	    
+	}
+}
