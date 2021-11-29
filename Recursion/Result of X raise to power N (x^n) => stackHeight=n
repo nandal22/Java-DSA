@@ -3,6 +3,9 @@ import java.util.*;
 public class Main
 {
     public static int printXpowerN(int x,int n){
+        if(x==0){
+            return 0;
+        }
         if(n==0){           // Base condition
             return 1;
         }
