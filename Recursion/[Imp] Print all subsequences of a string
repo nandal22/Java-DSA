@@ -1,0 +1,24 @@
+import java.util.*;
+
+public class Main
+{
+    public static void subSequences(String str,int idx,String newString){
+        if(idx==str.length()){
+            System.out.print(newString+" ");
+            return;
+        }
+        char currChar=str.charAt(idx);
+        // character want to Come
+        subSequences(str,idx+1,newString+currChar);
+        // character don't want to Come
+        subSequences(str,idx+1,newString);
+    }
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter the string : ");
+		String str=sc.next();
+		System.out.println("Subsequeces of the "+str+" are : ");
+		subSequences(str,0,"");
+		
+	}
+}
