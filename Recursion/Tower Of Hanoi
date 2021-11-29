@@ -16,6 +16,6 @@ public class Main
 	    Scanner sc=new Scanner(System.in);
 	    System.out.print("Enter no. of disks : ");
 	    int n=sc.nextInt();
-	    towerOfHanoi(n,"S","H","D");       // Time Complexity => (2^n -1) => 2^n
+	    towerOfHanoi(n,"S","H","D");       // Time Complexity => 2^(n-1) => 2^n
 	}
 }
