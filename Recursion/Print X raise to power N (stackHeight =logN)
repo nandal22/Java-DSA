@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class Main
+{
+    public static int printXpowerN(int x,int n){
+        if(x==0){
+            return 0;
+        }
+        if(n==0){           // Base condition
+            return 1;
+        }
+        if(n%2==0){   // if n is even
+            return printXpowerN(x,n/2) * printXpowerN(x,n/2);
+        }
+        else{        // if n is odd
+            return printXpowerN(x,n/2) * printXpowerN(x,n/2) * x;
+        }
+        
+    }
+    
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    System.out.print("Enter x : ");
+	    int x= sc.nextInt();
+	    System.out.print("Enter n : ");
+	    int n=sc.nextInt();
+	    System.out.println("The result of "+x+"^"+n+" is : "+printXpowerN(x,n));
+	    
+	}
+}
