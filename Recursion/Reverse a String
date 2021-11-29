@@ -3,7 +3,8 @@ import java.util.*;
 public class Main
 {
     public static void printReverseString(String str,int idx){
-        if(idx<0){
+        if(idx==0){
+            System.out.print(str.charAt(idx));
             return;
         }
         System.out.print(str.charAt(idx));
