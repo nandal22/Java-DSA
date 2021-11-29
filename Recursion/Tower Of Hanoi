@@ -1,0 +1,21 @@
+import java.util.*;
+
+public class Main
+{
+    public static void towerOfHanoi(int n,String src,String helper,String dest){
+        if(n==1){
+            System.out.println("Transfering disk "+n+" from "+src+" to "+dest);
+            return;
+        }
+        towerOfHanoi(n-1,src,dest,helper);     // Transfering n-1 disks from src to helper
+        System.out.println("Transfering disk "+n+" from "+src+" to "+dest);// Transfering remaining one disk of source to destination
+        towerOfHanoi(n-1,helper,src,dest);     // Transfering n-1 disks present at helper to destination
+    }
+    
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    System.out.print("Enter no. of disks : ");
+	    int n=sc.nextInt();
+	    towerOfHanoi(n,"S","H","D");
+	}
+}
