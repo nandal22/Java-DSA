@@ -1,0 +1,33 @@
+import java.util.*;
+public class Main
+{
+    public static void selectionSort(int[] arr,int size){    //    TIME COMPLEXITY = O(2^n)
+        for(int i=0;i<size;i++){
+            int smallestIdx = i;        // storing the index of the smallest index
+            for(int j=i+1;j<size;j++){
+                if(arr[j]<arr[smallestIdx]){
+                    smallestIdx=j;
+                }
+            }
+            int temp=arr[i];
+            arr[i]=arr[smallestIdx];
+            arr[smallestIdx]=temp;
+        }
+    }
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter size of array: ");
+		int size=sc.nextInt();
+		int[] arr = new int[size]; 
+		System.out.print("Enter elements of array : ");
+		for(int i=0;i<size;i++){
+		    arr[i]=sc.nextInt();
+		}
+		System.out.print("Sorted array is : ");
+		selectionSort(arr,size);
+		for(int i=0;i<size;i++){
+		    System.out.print(arr[i]+" ");
+		}
+		
+	}
+}
