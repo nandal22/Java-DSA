@@ -1,0 +1,123 @@
+
+
+public class Main
+{
+    Node head;
+    private int size;
+    Main(){
+        this.size=0;
+    }
+    class Node{
+        String data;
+        Node next;
+        Node(String data){
+            this.data=data;
+            this.next=null;
+        }
+    }
+    public void addFirst(String data){
+        Node newNode = new Node(data);
+        if(head==null){
+            head=newNode;
+            size++;
+            return;
+        }
+        newNode.next=head;
+        head=newNode;
+        size++;
+        return;
+    }
+    public void addLast(String data){
+        Node newNode=new Node(data);
+        if(head==null){
+            head=newNode;
+            size++;
+            return;
+        }
+        Node currNode=head;
+        while(currNode.next!=null){
+            currNode = currNode.next;
+        }
+        currNode.next=newNode;
+        size++;
+        return;
+    }
+    public void printList(){
+        Node currNode=head;
+        while(currNode!=null){
+            System.out.print(currNode.data+" -> ");
+            currNode = currNode.next;
+        }
+        System.out.println("NULL");
+        return;
+    }
+    public void deleteFirst(){
+        if(head==null){
+            System.out.println("List is Empty !!");
+            return;
+        }
+        head = head.next;
+        size--;
+        return;
+        
+    }
+    public void deleteLast(){
+        if(head==null){
+            System.out.println("List is Empty !!");
+            return;
+        }
+        size--;
+        if(head.next==null){
+            head=null;
+            size--;
+            return;
+        }
+        Node secondLast=head;
+        Node lastNode=head.next;
+        while(lastNode.next!=null){
+            lastNode=lastNode.next;
+            secondLast=secondLast.next;
+        }
+        secondLast.next=null;
+        
+        return;
+    }
+	public static void main(String[] args) {
+		Main list  = new Main();
+		list.addFirst("is");
+		list.addLast("a");
+		list.printList();
+		System.out.println(list.size);
+		
+		list.addLast("Linked List");
+		list.printList();
+		System.out.println(list.size);
+		
+
+		list.addFirst("This");
+		list.printList();
+		System.out.println(list.size);
+		
+
+		list.addFirst("Hi");
+		list.printList();
+		System.out.println(list.size);
+		
+
+		list.deleteFirst();
+		list.printList();
+		System.out.println(list.size);
+		
+
+		list.addLast("newNode");
+		list.printList();
+		System.out.println(list.size);
+		
+
+		list.deleteLast();
+		list.printList();
+		System.out.println(list.size);
+		
+
+	}
+}
